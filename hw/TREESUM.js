@@ -1,22 +1,27 @@
 "use strict"
+// 
 
-var massiv = [ 5, 7, [ 4, [2], 8, [1,3], 2 ], [ 9, [] ],  1, 8 ];
-
-var g = function(massiv){
-    var summaMassiva = 0;
-    for(var i=0; i<massiv.length; i++){
-        var rez = massiv[i];
-        if(typeof(rez) == 'number'){
-            summaMassiva += rez;
-        }else{
-            summaMassiva += g(rez);
-        }
-    }
-
-    return summaMassiva;
+// for (var i = 20; ; i++) {
+//     if(i%6 == 0){
+//         console.log("sfsdfsdff " + i);
+//         break;
+//     }
+    
+function a(year){
+        if(year%4 == 0){
+            return 366;
+        }else{return 365;}
 }
 
-console.log("Сумма всех элементов данного массива = " + g(massiv));
+console.log('В 2013 году дней: ' + a(2013));
+console.log('В 2018 году дней: ' + a(2016));
+
+function f(d,b,c){
+    console.log(d + ' / ' + b + ' / ' + c  );
+
+}
+
+f(3);
 
 
 
