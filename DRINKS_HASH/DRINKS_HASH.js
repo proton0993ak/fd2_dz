@@ -1,29 +1,32 @@
 "use strict";
 
 function HashStorage(){
+
+    // Спрашивает название напитка
+
+    var nameNapitok = prompt("Введите название напитка");
+
+    // Спрашивает алкогольный он или нет
+
+    var alkOrnoalc = prompt("Напиток алкогольный  или без алкогольный?");
+
+    // Спрашивает  рецепт его приготовления
+
+    var recept = prompt("Какой рецепт у напитка?");
+
+    // сохраняет информацию о напитке в хранилище.
+
+
     var t = this;
 
     t.value = null;
     t.key = null;
 
-    t.addValue = function(_key,_value){ t.value = _value;  t.key = _key; return t; };
-    t.show = function(){console.log(t.value + "" + t.key); return t;}
+    t.addValue = function(key, value){ t.value = value;  t.key = key; return t; };
+    t.show = function(){console.log(t.value + " " + t.key); return t;}
 }
 
-(new HashStorage()).addValue("id2", "12345").show();
+
+var drinkStorage = new HashStorage();
 
 
-
-function Car() {
-    var self=this;
-
-    self.num=null;
-    self.color=null;
-    
-    self.setNum=function(_num) { self.num=_num; return self; }
-    self.setColor=function(_color) { self.color=_color; return self; }
-    self.beep=function() { console.log('Beeeep!'); return self; }
-    self.show=function() { console.log( 'num='+self.num+' color='+self.color ); return self; }
-}
-
-(new Car()).setNum('AAA111').setColor('чёрный').beep().show();
